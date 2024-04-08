@@ -1,0 +1,33 @@
+#include <algorithm>
+#include <vector>
+#include <iostream>
+using namespace std;
+int main() {
+    setlocale(LC_ALL, "ru");
+    vector<int> d;
+    int input;
+
+    cout << "enter numbers 0 to stop:\n";
+
+    do {
+        cin >> input;
+        if (input != 0) {
+            d.push_back(input);
+        }
+    } while (input != 0);
+   
+    cout << "enter findig number:";
+    int x;
+    cin >> x;
+
+    auto it = find(d.begin(), d.end(), x);
+
+    if (it != d.end()) {
+        cout << "finding number found on:" << it - d.begin() << '\n';
+    }
+    else {
+        cout << "finding number not found";
+    }
+
+    return 0;
+}
